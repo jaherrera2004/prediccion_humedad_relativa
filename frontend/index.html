@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predicción de Humedad Relativa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Predicción de Humedad Relativa</h1>
+    <p>Árbol de Decisión — Dataset Szeged 2006–2016</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-panel="prediccion">Predicción</button>
+    <button class="tab" data-panel="metricas">Métricas</button>
+    <button class="tab" data-panel="datos">Datos</button>
+  </nav>
+
+  <main>
+    <!-- Tab: Predicción -->
+    <div class="tab-panel active" id="panel-prediccion">
+      <section class="card" id="form-section">
+        <h2>Ingresar datos meteorológicos</h2>
+        <form id="predict-form">
+          <div class="form-grid">
+            <div class="field">
+              <label for="temperature">Temperatura (°C)</label>
+              <input type="number" id="temperature" step="0.1" placeholder="ej: 15.0" required />
+            </div>
+            <div class="field">
+              <label for="apparent_temperature">Temperatura aparente (°C)</label>
+              <input type="number" id="apparent_temperature" step="0.1" placeholder="ej: 13.0" required />
+            </div>
+            <div class="field">
+              <label for="wind_speed">Velocidad del viento (km/h)</label>
+              <input type="number" id="wind_speed" step="0.1" min="0" placeholder="ej: 14.5" required />
+            </div>
+            <div class="field">
+              <label for="wind_bearing">Dirección del viento (°)</label>
+              <input type="number" id="wind_bearing" step="1" min="0" max="360" placeholder="ej: 180" required />
+            </div>
+            <div class="field">
+              <label for="visibility">Visibilidad (km)</label>
+              <input type="number" id="visibility" step="0.1" min="0" placeholder="ej: 12.0" required />
+            </div>
+            <div class="field">
+              <label for="pressure">Presión atmosférica (mbar)</label>
+              <input type="number" id="pressure" step="0.1" min="800" max="1100" placeholder="ej: 1013.0" required />
+            </div>
+          </div>
+          <button type="submit">Predecir</button>
+        </form>
+      </section>
+
+      <section class="card hidden" id="result-section">
+        <h2>Predicción de humedad relativa</h2>
+        <div id="clase-badge"></div>
+        <p id="clase-rango"></p>
+        <div class="probs-container">
+          <h3>Probabilidades</h3>
+          <div id="probs"></div>
+        </div>
+        <div class="regla-container">
+          <h3>Regla del árbol</h3>
+          <p id="regla"></p>
+        </div>
+      </section>
+
+      <section class="card hidden error-card" id="error-section">
+        <p id="error-msg"></p>
+      </section>
+    </div>
+
+    <!-- Tab: Métricas -->
+    <div class="tab-panel" id="panel-metricas">
+      <section class="card" id="metrics-section">
+        <h2>Métricas del modelo</h2>
+        <div id="metrics-content">Cargando...</div>
+      </section>
+      <section class="card">
+        <h2>Matriz de correlación</h2>
+        <div class="corr-wrap" id="correlation-matrix">Cargando...</div>
+      </section>
+    </div>
+
+    <!-- Tab: Datos -->
+    <div class="tab-panel" id="panel-datos">
+      <section class="card">
+        <h2>Dataset — Szeged 2006–2016</h2>
+        <div id="dataset-content">Cargando...</div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

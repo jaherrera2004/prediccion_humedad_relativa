@@ -1,0 +1,62 @@
+{
+  "accuracy": 0.824,
+  "f1_macro": 0.7807,
+  "cv_f1_mean": 0.7104,
+  "cv_f1_std": 0.0162,
+  "per_class": {
+    "Alta": {
+      "precision": 0.89,
+      "recall": 0.8892,
+      "f1": 0.8896
+    },
+    "Baja": {
+      "precision": 0.7484,
+      "recall": 0.7814,
+      "f1": 0.7645
+    },
+    "Media": {
+      "precision": 0.6917,
+      "recall": 0.6844,
+      "f1": 0.688
+    }
+  },
+  "confusion_matrix": [
+    [
+      11050,
+      40,
+      1337
+    ],
+    [
+      42,
+      1190,
+      291
+    ],
+    [
+      1324,
+      360,
+      3652
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Alta",
+    "Baja",
+    "Media"
+  ],
+  "feature_importances": {
+    "temperature": 0.3255,
+    "apparent_temperature": 0.0896,
+    "wind_speed": 0.0698,
+    "wind_bearing": 0.0602,
+    "visibility": 0.1307,
+    "pressure": 0.0966,
+    "mes": 0.0644,
+    "hora": 0.131,
+    "dia_semana": 0.0322
+  },
+  "best_params": {
+    "criterion": "entropy",
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2
+  }
+}

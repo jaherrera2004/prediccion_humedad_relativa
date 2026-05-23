@@ -1,0 +1,11 @@
+[
+  "temperature",
+  "apparent_temperature",
+  "wind_speed",
+  "wind_bearing",
+  "visibility",
+  "pressure",
+  "mes",
+  "hora",
+  "dia_semana"
+]
