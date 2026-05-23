@@ -4,6 +4,13 @@ Modelo de clasificación que predice el nivel de humedad relativa (Baja / Media 
 
 ---
 
+## Autores
+
+- Juan Andrés Herrera Ramírez
+- José Daniel Polo Narváez
+
+---
+
 ## Fuente de datos
 
 [Weather in Szeged 2006–2016](https://www.kaggle.com/datasets/budincsevity/szeged-weather) — Kaggle
