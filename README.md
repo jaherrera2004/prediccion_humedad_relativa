@@ -4,6 +4,12 @@ Modelo de clasificación que predice el nivel de humedad relativa (Baja / Media 
 
 ---
 
+## Fuente de datos
+
+[Weather in Szeged 2006–2016](https://www.kaggle.com/datasets/budincsevity/szeged-weather) — Kaggle
+
+---
+
 ## Stack
 
 | Capa | Tecnología |
