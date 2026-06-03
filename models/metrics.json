@@ -1,40 +1,40 @@
 {
-  "accuracy": 0.824,
-  "f1_macro": 0.7807,
-  "cv_f1_mean": 0.7104,
-  "cv_f1_std": 0.0162,
+  "accuracy": 0.8246,
+  "f1_macro": 0.7831,
+  "cv_f1_mean": 0.7126,
+  "cv_f1_std": 0.0161,
   "per_class": {
     "Alta": {
-      "precision": 0.89,
-      "recall": 0.8892,
-      "f1": 0.8896
+      "precision": 0.8912,
+      "recall": 0.8869,
+      "f1": 0.889
     },
     "Baja": {
-      "precision": 0.7484,
-      "recall": 0.7814,
-      "f1": 0.7645
+      "precision": 0.7598,
+      "recall": 0.7787,
+      "f1": 0.7691
     },
     "Media": {
-      "precision": 0.6917,
-      "recall": 0.6844,
-      "f1": 0.688
+      "precision": 0.6897,
+      "recall": 0.6927,
+      "f1": 0.6912
     }
   },
   "confusion_matrix": [
     [
-      11050,
-      40,
-      1337
+      11021,
+      33,
+      1373
     ],
     [
-      42,
-      1190,
-      291
+      47,
+      1186,
+      290
     ],
     [
-      1324,
-      360,
-      3652
+      1298,
+      342,
+      3696
     ]
   ],
   "confusion_matrix_labels": [
@@ -43,15 +43,15 @@
     "Media"
   ],
   "feature_importances": {
-    "temperature": 0.3255,
-    "apparent_temperature": 0.0896,
-    "wind_speed": 0.0698,
-    "wind_bearing": 0.0602,
-    "visibility": 0.1307,
-    "pressure": 0.0966,
-    "mes": 0.0644,
+    "temperature": 0.3362,
+    "apparent_temperature": 0.0793,
+    "wind_speed": 0.0717,
+    "wind_bearing": 0.0593,
+    "visibility": 0.1306,
+    "pressure": 0.0949,
+    "mes": 0.0642,
     "hora": 0.131,
-    "dia_semana": 0.0322
+    "dia_semana": 0.0328
   },
   "best_params": {
     "criterion": "entropy",

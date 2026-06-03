@@ -75,6 +75,15 @@ df = df_raw.copy()
 df["Formatted Date"] = pd.to_datetime(df["Formatted Date"], utc=True)
 df = df.drop_duplicates()
 df["Precip Type"] = df["Precip Type"].fillna("rain")
+
+# Reemplazar presión corrupta (0) por el promedio de la propia variable
+pressure_mask = df["Pressure (millibars)"] == 0
+pressure_replaced = int(pressure_mask.sum())
+pressure_mean = None
+if pressure_mask.any():
+    pressure_mean = df.loc[~pressure_mask, "Pressure (millibars)"].mean()
+    df.loc[pressure_mask, "Pressure (millibars)"] = pressure_mean
+
 df = df.drop(columns=["Loud Cover", "Daily Summary", "Summary", "Precip Type"])
 
 df = df.rename(columns={
@@ -96,6 +105,11 @@ df[numeric_cols] = df[numeric_cols].round(2)
 section("DESPUÉS — Dataset limpio")
 print(f"  Filas: {len(df):,}  |  Columnas: {df.shape[1]}")
 print(f"  Filas eliminadas (duplicados): {len(df_raw) - len(df):,}")
+if pressure_replaced > 0 and pressure_mean is not None:
+    print(
+        f"  [DESPUÉS] Pressure (millibars): {pressure_replaced} valores = 0 "
+        f"reemplazados por el promedio ({pressure_mean:.2f})"
+    )
 print()
 report_nulls(df, "DESPUÉS")
 print()
